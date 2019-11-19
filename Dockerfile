@@ -1,7 +1,7 @@
-FROM golang:1-stretch
+FROM golang:1-buster
 
-RUN apt update && apt install -y --no-install-recommends \
-		python-pip python-setuptools python-dev \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		python3-pip python3-setuptools python3-dev \
 	&& rm -rf /var/lib/apt/lists/*
-RUN pip install awscli aws-sam-cli
+RUN pip3 install awscli aws-sam-cli
 
